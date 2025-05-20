@@ -18,6 +18,7 @@ app.post("/send-email", (req, res) => {
   if (process.env.NODE_ENV !== "production") {
     console.log("Received request body:", req.body);
   }
+
   const { firstName, lastName, company, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -28,16 +29,12 @@ app.post("/send-email", (req, res) => {
     },
   });
 
-  console.log("Setting up mail options...");
-
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.EMAIL_USER,
     subject: `New message from ${firstName} ${lastName}`,
     text: `Company: ${company}\nEmail: ${email}\n\nMessage: ${message}`,
   };
-
-  console.log("Sending email...");
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
