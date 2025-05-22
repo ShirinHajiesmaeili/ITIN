@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t text-sm py-6 px-4">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+        {/* Policy Links */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <Link
             to="/cookie-consent"
@@ -18,8 +19,15 @@ const Footer = () => {
           >
             Privacy Policy
           </Link>
+          <Link
+            to="/impressum"
+            className="hover:underline text-[#037c92] font-kodchasan hover:text-[#f7941c] transition"
+          >
+            Impressum
+          </Link>
         </div>
 
+        {/* Social Icons */}
         <div className="flex gap-4 items-center mt-4 sm:mt-0">
           <a
             href="https://www.linkedin.com/in/shirinhajiesmaeili/"
@@ -39,7 +47,8 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="text-xs text-gray-500 mt-4 sm:mt-0">
+        {/* Copyright */}
+        <p className="text-xs text-gray-500 mt-4 sm:mt-0 text-center sm:text-left">
           &copy; {new Date().getFullYear()} iTiN. All rights reserved.
         </p>
       </div>
