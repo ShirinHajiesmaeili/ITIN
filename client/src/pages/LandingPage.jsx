@@ -6,22 +6,20 @@ import BackgroundColour from "../components/BackgroundColour.jsx";
 
 const LandingPage = () => {
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center">
-      <div className="fixed inset-0 -z-10">
-        <BackgroundColour />
-      </div>
+    <div className="relative min-h-screen bg-white overflow-hidden">
+      <BackgroundColour />
 
-      {/* Logo */}
+      {/* Full-Screen Logo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: -30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="w-full max-w-[600px] px-6"
+        className="absolute inset-0 z-10 flex items-center justify-center"
       >
         <img
           src={itinLogo}
           alt="I Logo"
-          className="w-full h-auto object-contain"
+          className="w-full h-full object-contain"
         />
       </motion.div>
 
@@ -30,10 +28,10 @@ const LandingPage = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="mt-6 px-6 text-center"
+        className="z-20 absolute bottom-12 sm:bottom-20 w-full px-6"
       >
         <motion.h1
-          className="text-base sm:text-lg font-medium max-w-xl mx-auto text-gray-600"
+          className="text-sm sm:text-lg font-medium max-w-xl mx-auto text-center text-gray-600"
           style={{ fontFamily: "kodchasan" }}
         >
           Crafting seamless web and mobile experiences with full-stack
@@ -45,7 +43,7 @@ const LandingPage = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="mt-6"
+          className="mt-6 flex justify-center"
         >
           <Link
             to="/about"
