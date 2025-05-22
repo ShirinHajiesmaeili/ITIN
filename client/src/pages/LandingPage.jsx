@@ -6,32 +6,34 @@ import BackgroundColour from "../components/BackgroundColour.jsx";
 
 const LandingPage = () => {
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden">
-      <BackgroundColour />
+    <div className="relative min-h-screen bg-white overflow-hidden flex flex-col items-center justify-center">
+      <div className="fixed inset-0 -z-10">
+        <BackgroundColour />
+      </div>
 
-      {/* Full-Screen Logo */}
+      {/* Logo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: -30 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="absolute inset-0 z-10 flex items-center justify-center"
+        className="w-full max-w-[600px] px-6"
       >
         <img
           src={itinLogo}
           alt="I Logo"
-          className="object-contain w-full h-full"
+          className="w-full h-auto object-contain"
         />
       </motion.div>
 
-      {/* Text Content Below the Logo */}
+      {/* Text and Button */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 30 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="z-10 text-center absolute top-[70%] sm:top-[85%] transform -translate-y-1/2 w-full px-6 pb-8"
+        className="mt-6 px-6 text-center"
       >
         <motion.h1
-          className="text-lg font-medium max-w-xl mx-auto text-gray-600"
+          className="text-base sm:text-lg font-medium max-w-xl mx-auto text-gray-600"
           style={{ fontFamily: "kodchasan" }}
         >
           Crafting seamless web and mobile experiences with full-stack
@@ -39,12 +41,11 @@ const LandingPage = () => {
           approach to design and structure.
         </motion.h1>
 
-        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="z-10 mt-6"
+          className="mt-6"
         >
           <Link
             to="/about"
