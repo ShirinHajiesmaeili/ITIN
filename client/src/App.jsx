@@ -15,7 +15,7 @@ const App = () => {
       <div className="min-h-screen bg-gray-100 text-gray-800 flex flex-col">
         <main className="flex-grow">
           <Routes>
-            <Route path="/home" element={<LandingPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
